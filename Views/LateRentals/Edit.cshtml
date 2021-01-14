@@ -1,0 +1,25 @@
+﻿@model CentrumBibliotektet_Uppdaterad.Models.Loan
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link href="~/StyleSheet.css" rel="stylesheet" />
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="text-center" style="margin:20px">
+    <h1 class="display-4">Reminder</h1>
+</div>
+
+<div style="background-color: whitesmoke; border-radius: 1em; padding: 20px;">
+
+    <div> <p>Please enter customer email in order to send them a reminder to return their book:</p></div>
+        <div class="mb-3">
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+    
+    <form asp-action="SKickaEmail">
+        <input type="hidden" asp-for="LoanId" />
+        <input type="submit" value="Send reminder email" class="btn btn-primary" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
